@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1182003693026789479}
   - component: {fileID: 7018607417484372830}
   - component: {fileID: 4273525680619792136}
+  - component: {fileID: -1350093992545071888}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -141,3 +142,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &-1350093992545071888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772278089954924648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78f117672fe18e40bf72cda85b3cefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  _moveSpeed: 3

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemySpawnerManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private Enemy _enemyPrefab;
     [SerializeField] private Spawner[] _spawnPoints;
     [SerializeField] private float _spawnInterval = 2f;
     [SerializeField] private float _spawnHeightOffset = 1f;
@@ -15,10 +15,10 @@ public class EnemySpawnerManager : MonoBehaviour
 
     private IEnumerator SpawnLoop()
     {
-        while (true)
+        while (enabled)
         {
-            SpawnEnemy();
             yield return new WaitForSeconds(_spawnInterval);
+            SpawnEnemy();
         }
     }
 
@@ -31,9 +31,8 @@ public class EnemySpawnerManager : MonoBehaviour
         Vector3 addHeight = new Vector3(0, _spawnHeightOffset, 0);
         Vector3 spawnPosition = chosenSpawner.SpawnPosition + addHeight;
 
-        GameObject enemyGO = Instantiate(_enemyPrefab, chosenSpawner.SpawnPosition, Quaternion.identity);
+        Enemy enemy = Instantiate(_enemyPrefab, chosenSpawner.SpawnPosition, Quaternion.identity);
 
-        Enemy enemy = enemyGO.GetComponent<Enemy>();
         enemy.Initialize(chosenSpawner.MoveDirection);
     }
 }
