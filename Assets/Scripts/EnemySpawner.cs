@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (_spawnPoints.Length == 0) return;
 
-        Vector3 chosenSpawner = _spawnPoints[Random.Range(0, _spawnPoints.Length) + 1];
+        Vector3 chosenSpawner = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
         Vector3 addHeight = new Vector3(0, _spawnHeightOffset, 0);
         Vector3 spawnPosition = chosenSpawner + addHeight;
 
