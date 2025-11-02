@@ -12,7 +12,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnLoop());
+        WaitForSeconds waitForSeconds = new WaitForSeconds(_spawnIntervalSec);
+        StartCoroutine(SpawnLoop(waitForSeconds));
     }
 
     private void OnDrawGizmos()
@@ -31,10 +32,8 @@ public class EnemySpawner : MonoBehaviour
         Gizmos.DrawSphere(position , sphereRadius);
     }
 
-    private IEnumerator SpawnLoop()
+    private IEnumerator SpawnLoop(WaitForSeconds waitForSeconds)
     {
-        WaitForSeconds waitForSeconds = new WaitForSeconds(_spawnIntervalSec);
-        
         while (enabled)
         {
             yield return waitForSeconds;
