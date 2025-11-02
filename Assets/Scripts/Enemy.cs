@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
         _moveDirection = direction.normalized;
     }
 
-    void Update()
+    private void Update()
     {
         transform.position += _moveDirection * _moveSpeed * Time.deltaTime;
     }
